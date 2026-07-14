@@ -2,7 +2,6 @@ node_modules/
 .idea/
 build/
 *.db
-config.js
 src/declarations/
 .vs/
 .vscode/
@@ -13,3 +12,4 @@ report.*.json
 docs/
 coverage/
 .stylelintcache
+.claude/

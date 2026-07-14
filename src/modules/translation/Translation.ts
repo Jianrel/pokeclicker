@@ -70,7 +70,13 @@ export default class Translate {
                 debug: GameHelper.isDevelopmentBuild(),
                 ns: namespaces,
                 fallbackNS: 'pokemon',
-                fallbackLng: 'en',
+                fallbackLng: 'pt-BR',
+                detection: {
+                    // Default to pt-BR for new players regardless of browser locale;
+                    // still honors an explicit in-game language change (cached below) or a ?lng= override.
+                    order: ['querystring', 'localStorage', 'cookie'],
+                    caches: ['localStorage'],
+                },
                 backend: {
                     // Two backend sources - tries the TRANSLATION_URL first, falls back to copy taken at build time
                     backends: [HttpBackend, HttpBackend],

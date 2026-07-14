@@ -571,7 +571,7 @@ Settings.getSetting('backgroundImage').observableValue.subscribe((newValue) => {
 });
 
 // Translation
-Settings.add(new Setting<Language>('translation.language', 'Language (beta)', Settings.enumToSettingOptionArray(Language, () => true, LanguageNames) as unknown as SettingOption<Language>[], Language.en));
+Settings.add(new Setting<Language>('translation.language', 'Language (beta)', Settings.enumToSettingOptionArray(Language, () => true, LanguageNames) as unknown as SettingOption<Language>[], Language['pt-BR']));
 
 // Logs Settings
 Object.keys(LogBookTypes).forEach((logBookType) => {
