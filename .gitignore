@@ -13,3 +13,6 @@ docs/
 coverage/
 .stylelintcache
 .claude/
+automation/logs/
+automation/missing-translations.json
+automation/.update.lock
