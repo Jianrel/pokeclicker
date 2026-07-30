@@ -189,6 +189,12 @@ Settings.add(new Setting<string>('gameDisplayStyle', 'Game display style',
     ],
     'standard3'));
 Settings.add(new BooleanSetting('showMuteButton', 'Show mute/unmute button', true));
+Settings.add(new Setting<string>('playerSafariSprite', 'Player safari sprite',
+    [
+        new SettingOption('Male', 'male'),
+        new SettingOption('Female', 'female'),
+    ],
+    'male'));
 
 // CSS variable settings
 Settings.add(new CssVariableSetting('locked', 'Locked Location', [], '#000000'));
@@ -568,6 +574,13 @@ Settings.add(new Setting('discord-rp.small-image', 'Discord small image',
 Settings.getSetting('backgroundImage').observableValue.subscribe((newValue) => {
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     newValue === 'background-dynamic' ? DynamicBackground.startScene() : DynamicBackground.stopScene();
+});
+
+Settings.getSetting('playerSafariSprite').observableValue.subscribe((newValue) => {
+    const sprite = document.getElementById('sprite');
+    if (sprite) {
+        sprite.dataset.gender = newValue;
+    }
 });
 
 // Translation
